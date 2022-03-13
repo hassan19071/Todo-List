@@ -1,0 +1,227 @@
+body{
+    background-color: rgb(15, 14, 14);
+    min-height: 100vh;
+    overflow-x:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+.header{
+    min-height: 29vh;
+    background-image: url("../images/bg-desktop-dark.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    .change-mood{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgb(87, 6, 6);
+        color: #fff;
+        border: none;
+        outline: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    .content{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        @media (min-width:830px) {
+            width: 50%;
+        }
+        @media (max-width:830px) {
+            width: 90%;
+        }
+        .logo{
+            h1{
+                color: #fff;
+                font-size: 30px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 6px;
+            }
+        }
+        .form{
+            margin-top: 25px;
+            width: 100%;
+            .search{
+                position: relative;
+                width: 100%;
+                .input-text{
+                    padding: 7px 20px;
+                    border: none;
+                    outline: none;
+                    color: rgb(247, 243, 243);
+                    background-color: rgb(39, 39, 39);
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    width: 100%;
+                    &::placeholder{
+                        font-size: 14px;
+                        color: rgb(155, 153, 153);
+                    }
+                }
+                button{
+                    position: absolute;
+                    right: 0;
+                    padding: 7px 30px;
+                    border: none;
+                    outline: none;
+                    background-color: rgb(8, 116, 116);
+                    color: #fff;
+                    text-transform: uppercase;
+                    border-radius: 0 5px 5px 0;
+                    &:disabled{
+                        opacity: .3;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+            .results{
+                background-color: rgb(39, 39, 39);
+                >ul{
+                  li{
+                      border-bottom: 1px solid rgb(65, 64, 64);
+                      padding: 10px 20px;
+                      color: rgb(122, 120, 120);
+                      cursor: pointer;
+                      justify-content: space-between;
+                      display: flex;
+                      align-items: center;
+                      user-select: none;
+                      img{
+                          cursor: pointer;
+                      }
+                  }
+                }
+                .data{
+                    font-size: 13px;
+                    color: rgb(80, 79, 79);
+                    padding: 10px 20px;
+                    ul{
+                        li{
+                            margin: 0 5px;
+                            cursor: pointer;
+                            &.active{
+                                color: rgb(8, 116, 116);
+                            }
+                        }
+                    }
+                    P{
+                        margin: 0;
+                        user-select:none;
+                    }
+                }
+            }
+        }
+    }
+}
+}
+
+.light{
+    background-color: rgb(241, 236, 236);
+    min-height: 100vh;
+    overflow-x:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+.header{
+    min-height: 29vh;
+    background-image: url("../images/bg-desktop-light.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    .content{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        @media (min-width:830px) {
+            width: 50%;
+        }
+        @media (max-width:830px) {
+            width: 90%;
+        }
+        .logo{
+            h1{
+                color: #fff;
+                font-size: 30px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 6px;
+            }
+        }
+        .form{
+            margin-top: 25px;
+            width: 100%;
+            .search{
+                position: relative;
+                width: 100%;
+                .input-text{
+                    padding: 7px 20px;
+                    border: none;
+                    outline: none;
+                    color: rgb(20, 20, 20);
+                    background-color: rgb(199, 197, 197);
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    width: 100%;
+                    &::placeholder{
+                        font-size: 14px;
+                        color: rgb(83, 81, 81);
+                    }
+                }
+                button{
+                    position: absolute;
+                    right: 0;
+                    padding: 7px 30px;
+                    border: none;
+                    outline: none;
+                    background-color: rgb(8, 116, 116);
+                    color: #fff;
+                    text-transform: uppercase;
+                    border-radius: 0 5px 5px 0;
+                    &:disabled{
+                        opacity: .3;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+            .results{
+                background-color: rgb(199, 197, 197);
+                >ul{
+                  li{
+                      border-bottom: 1px solid rgb(182, 181, 181);
+                      padding: 10px 20px;
+                      color: rgb(70, 67, 67);
+                      cursor: pointer;
+                      justify-content: space-between;
+                      display: flex;
+                      align-items: center;
+                      user-select: none;
+                      img{
+                          cursor: pointer;
+                      }
+                  }
+                }
+                .data{
+                    font-size: 13px;
+                    color: rgb(53, 52, 52);
+                    padding: 10px 20px;
+                    ul{
+                        li{
+                            margin: 0 5px;
+                            cursor: pointer;
+                            &.active{
+                                color: rgb(8, 116, 116);
+                            }
+                        }
+                    }
+                    P{
+                        margin: 0;
+                        user-select:none;
+                    }
+                }
+            }
+        }
+    }
+}
+}

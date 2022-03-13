@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center;margin: 50px 0 25px;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="dark">
+
+  <div class="header">
+    <button class="change-mood" @click="changeMood"></button>
+    <div class="container">
+      <div class="content">
+        <div class="logo d-flex align-items-center justify-content-between">
+          <h1>Todo</h1>
+          <img :src="mood=='light'? 'images/icon-sun.svg':'images/icon-moon.svg'" alt="sun">
+        </div>
+        <div class="form">
+          <div class="search">
+            <input type="text" placeholder="Type Todo Name" class="input-text" v-model="inputValue">
+            <button @click="addTodo" :disabled="inputValue==''">Add Todo</button>
+          </div>
+          <div class="results">
+            <ul class="list-unstyled">
+               <li v-for="todo,ind in todos"><span>{{todo}}</span><img src="images/icon-cross.svg" alt="" @click="removeTodo($event,ind)"></li>
+            </ul>
+            <div class="data row align-items-center">
+              <div class="col"><p><span class="num-of-todos">{{num}}</span>:Items Left</p></div>
+              <div class="col text-end" style="cursor: pointer;"><p @click="removeAll">Clear Complated</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="#">Hassan Khaled</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/poper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/vue.js"></script>
+  <!--<script src="js/main.js"></script>-->
+  <script>
+    new Vue({
+      el:".header",
+      data:{
+        inputValue :"",
+        todos :[],
+        num:0,
+        mood: "",
+      },
+      methods:{
+        addTodo : function(){
+             this.inputValue? this.todos.push(this.inputValue):"";
+             this.num +=1;
+             this.inputValue ="";
+        },
+        removeTodo : function(e,index){
+          this.todos.splice(index,1);
+          this.num -=1;
+        },
+        removeAll:function(){
+          this.todos = [];
+          this.num = 0;
+        },
+        changeMood : function(){
+           document.body.classList.toggle("light");
+           document.body.classList.contains("light")? this.mood="light":this.mood="dark";
+        }
+      },
+      
+    })
+  </script>
+
+</body>
+</html>
